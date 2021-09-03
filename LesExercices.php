@@ -11,6 +11,10 @@
 <?php include("./partial/_navbar.php");?>
 <div class="container">
     <h1>Exercices php</h1>
+    <h2>Les exercices en php</h2>
+    <ul>
+        <li><a href="/NewProject/exercice2.php"> exercice2 </a>Decoder les chaines de caractère</a></li>
+    </ul>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
