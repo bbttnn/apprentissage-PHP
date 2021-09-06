@@ -34,6 +34,9 @@
                 $vigenere[$line][$col] = $twiceArray[$i + $f];
             }
         }
+        ?>
+        
+        <?php
 
         $message = "APPRENDRE PHP EST UNE CHOSE FORMIDABLE";
         $key = "BACKEND";
@@ -43,29 +46,49 @@
         $keySize = count($keyArray);
 
         $keycounter = 0;
-        foreach($messageArray as $cursor => $letterToEncode) {
-            $keyLetterposition = $keycounter;
-            $letterKey = $keycounter % $keySize;
-            if($letterToEncode != " "){
-                $encodedmessage = $vigenere[$letterToEncode][$letterKey];
-            
-            }else{
-                $encodedmessage[] = " ";
+        foreach ($messageArray as $cursor => $letterToEncode) {
+            $keyLetterPosition = $keycounter % $keySize;
+            $letterKey = $keyArray[$keyLetterPosition];
+            if ($letterToEncode != " ") {
+                $encodedMessage[] = $vigenere[$letterToEncode][$letterKey];
+            } else {
+                $encodedMessage[] = " ";
             }
             $keycounter++;
- 
         }
 
+        $cryptedMessage = implode($encodedMessage);
+        ?>
+    
 
-        var_dump($messageArray);
+        <?php
+        $encodedMessage = "TWA PEE WM TESLH WL LSLVNMRJ";
+        $key4decode = "VIGENERE";
+        $encodedMessageArray = str_split($encodedMessage);
+        $key4decodeArray = str_split($key4decode);
+        $key4decodeSize = count($key4decodeArray);
 
+        $keycounter = 0;
+        foreach($encodedMessageArray as $cursor => $letterToDecode) {
+            $keyLetterPosition = $keycounter % $key4decodeSize;
+            $letterKey = $key4decodeArray[$keyLetterPosition];
+            if ($letterToDecode != " ") {
+                for($i = 0; $i < $alphabetSize; $i++){
+                    $lineToDecode = $alphabetArray[$i];
+                    if($vigenere[$lineToDecode][$letterKey] == $letterToDecode){
+                        $decryptedMessage[] = $lineToDecode;
+                    }
+                }
+              
+            } else {
+                $decryptedMessage[] = " ";
+               
+            }
+            $keycounter++;
+        }
 
-
-
-
-
-
-
+        $decodedMessage = implode($decryptedMessage);
+        var_dump($decodedMessage)
         ?>
 
 

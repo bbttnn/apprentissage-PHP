@@ -38,29 +38,69 @@
     
     <h5>2- encode le message "APPRENDRE PHP EST UNE CHOSE FORMIDABLE" avec la clé "BACKEND"</h5>
     <?php
+    
     $message = "APPRENDRE PHP EST UNE CHOSE FORMIDABLE";
     $key = "BACKEND";
-    // TO DO
-    $cryptedMessage = $message;
-    /**
-     * astuce pour la rotation de la clé BACKEND
-     * 14 / 7 -> 2
-     * 15 / 7 -> 2 reste 1
-     * pour récuperer le "reste 1" il faut faire un modulo
-     * 15 % 7 -> 1
-     * 176 % 7 -> 1 (25 x 7 et reste 1)
-     */
+    
+    $messageArray = str_split($message);
+    $keyArray = str_split($key);
+    $keySize = count($keyArray);
+
+    $keycounter = 0;
+    foreach($messageArray as $cursor => $letterToEncode) {
+        $keyLetterPosition = $keycounter % $keySize;
+        $letterKey = $keyArray[$keyLetterPosition];
+        if($letterToEncode != " "){
+            $encodedMessage[] = $vigenere[$letterToEncode][$letterKey];
+        
+        }else{
+          
+        }
+        $keycounter++;
+
+    }
+
+   
     ?>
+
     <p>le message est: <?php echo $message; ?></p>
     <p>la clé est: <?php echo $key ?></p>
-    <p>le résultat est: <?php echo $cryptedMessage; ?></p>
+    
+    
     <h5>3- decoder le message "TWA PEE WM TESLH WL LSLVNMRJ" avec la clé "VIGENERE"</h5>
+    
     <?php
+    
     $encodedMessage = "TWA PEE WM TESLH WL LSLVNMRJ";
     $key4decode = "VIGENERE";
-    // TO DO
-    $decodedMessage = $encodedMessage;
-    ?>
+    $encodedMessageArray = str_split($encodedMessage);
+    $key4decodeArray = str_split($key4decode);
+    $key4decodeSize = count($key4decodeArray);
+
+    $keycounter = 0;
+    foreach($encodedMessageArray as $cursor => $letterToDecode) {
+        $keyLetterPosition = $keycounter % $key4decodeSize;
+        $letterKey = $key4decodeArray[$keyLetterPosition];
+        if ($letterToDecode != " ") {
+            for($i = 0; $i < $alphabetSize; $i++){
+                $lineToDecode = $alphabetArray[$i];
+                if($vigenere[$lineToDecode][$letterKey] == $letterToDecode){
+                    $decryptedMessage[] = $lineToDecode;
+                }
+            }
+          
+        } else {
+            $decryptedMessage[] = " ";
+           
+        }
+        $keycounter++;
+    }
+            $decodedMessage = implode($decryptedMessage);
+   
+   ?>
+
+    
+$decodedMessage = implode($decryptedMessage);
     <p>le message chiffré est: <?php echo $encodedMessage; ?></p>
     <p>la clé est: <?php echo $key4decode ?></p>
     <p>le résultat est: <?php echo $decodedMessage; ?></p>
