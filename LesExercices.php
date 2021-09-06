@@ -10,8 +10,15 @@
 </head>
 
 <body>
-    <?php include("./partial/_navbar.php"); ?>
-    <div class="container">
+<?php include("./partial/_navbar.php");?>
+<div class="container">
+    <h1>Exercices php</h1>
+    <h2>Les exercices en php</h2>
+    <ul>
+        <li><a href="/NewProject/exercice2.php"> exercice2 </a>Decoder les chaines de caractère</a></li>
+    </ul>
+</div>
+
 
     
         <h1>Exercices php</h1>
