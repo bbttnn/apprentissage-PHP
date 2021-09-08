@@ -14,6 +14,7 @@
   <div class="container">
     <h1>exo3</h1>
     <h1>Exercice 3</h1>
+    
     <?php
     $tab1 = ["moteur", "carotte", "haricot", "pomme de terre", "usine", "salade", "navet", "marteau"];
     ?>
@@ -45,9 +46,8 @@
       $element = "marteau";
       unset($tab1[array_search($element, $tab1)]);
 
-
-
-    ?>
+      ?>
+    </p>
     <ul>
       <li><?php echo $tab1[1]; ?></li>
       <li><?php echo $tab1[2]; ?></li>
@@ -58,33 +58,39 @@
     </p>
     <h3>Second exercice:</h3>
     <p>transformaer la chaîne de caractère "bleu, vert, noir, rouge, jaune" en un tableau</p>
-    <p>ajouter en première position du tableau la valeur "violet"</p>
-    <p>résultat:
-      <?php
-      $tab = array("bleu", "vert", "noir", "rouge", "jaune");
-      array_unshift($tab, "violet");
-      var_dump($tab);
-      ?>
+
+    <p>ajouter en première position du tableau</p>
+
+
+    <?php
+    $tab = array("bleu", "vert", "noir", "rouge", "jaune");
+    array_unshift($tab, "violet");
+
+
+    ?>
+
 
     <ul>
-      <li><?php // echo $tab1[0]; 
+      <li><?php echo $tab[0];
           ?></li>
-      <li><?php // echo $tab1[1]; 
+      <li><?php echo $tab[1];
           ?></li>
-      <li><?php // echo $tab1[2]; 
+      <li><?php echo $tab[2];
           ?></li>
-      <li><?php // echo $tab1[3]; 
+      <li><?php echo $tab[3];
           ?></li>
-      <li><?php // echo $tab1[4]; 
+      <li><?php echo $tab[4];
           ?></li>
-      <li><?php // echo $tab1[5]; 
+      <li><?php echo $tab[5];
           ?></li>
-    </ul> 
+    </ul>
+
+
 
     </p>
 
   </div>
-  
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
