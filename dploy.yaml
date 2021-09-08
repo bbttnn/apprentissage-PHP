@@ -1,0 +1,11 @@
+dev:
+    scheme: ftp
+    host: roger.jeffnys.fr
+    port: 21
+    user: roger
+    pass: hWgokD7S3sJy
+    check: true
+    exclude: ["dploy.yaml",".gitignore" ]
+    path:
+        remote: /public_html/
+

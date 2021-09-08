@@ -44,9 +44,6 @@
 
       $element = "marteau";
       unset($tab1[array_search($element, $tab1)]);
-
-
-
     ?>
     <ul>
       <li><?php echo $tab1[1]; ?></li>
@@ -54,38 +51,46 @@
       <li><?php echo $tab1[3]; ?></li>
       <li><?php echo $tab1[5]; ?></li>
       <li><?php echo $tab1[6]; ?></li>
+
     </ul>
     </p>
     <h3>Second exercice:</h3>
     <p>transformaer la chaîne de caractère "bleu, vert, noir, rouge, jaune" en un tableau</p>
     <p>ajouter en première position du tableau la valeur "violet"</p>
     <p>résultat:
+<<
       <?php
       $tab = array("bleu", "vert", "noir", "rouge", "jaune");
       array_unshift($tab, "violet");
       var_dump($tab);
       ?>
 
-    <ul>
-      <li><?php // echo $tab1[0]; 
-          ?></li>
-      <li><?php // echo $tab1[1]; 
-          ?></li>
-      <li><?php // echo $tab1[2]; 
-          ?></li>
-      <li><?php // echo $tab1[3]; 
-          ?></li>
-      <li><?php // echo $tab1[4]; 
-          ?></li>
-      <li><?php // echo $tab1[5]; 
-          ?></li>
-    </ul> 
+   
+      <?php
+      $tab = array("bleu", "vert", "noir", "rouge", "jaune");
+      array_unshift($tab, "violet");
 
-    </p>
+      ?>
+
+      <ul>
+        <li><?php echo $tab[0];
+            ?></li>
+        <li><?php echo $tab[1];
+            ?></li>
+        <li><?php echo $tab[2];
+            ?></li>
+        <li><?php echo $tab[3];
+            ?></li>
+        <li><?php echo $tab[4];
+            ?></li>
+        <li><?php echo $tab[5];
+            ?></li>
+      </ul>
+
+
+   
 
   </div>
-  
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 
