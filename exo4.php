@@ -113,7 +113,7 @@
    ?>
 
     
-$decodedMessage = implode($decryptedMessage);
+
     <p>le message chiffré est: <?php echo $encodedMessage; ?></p>
     <p>la clé est: <?php echo $key4decode ?></p>
     <p>le résultat est: <?php echo $decodedMessage; ?></p>
