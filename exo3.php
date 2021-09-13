@@ -44,20 +44,23 @@
       unset($tab1[array_search($element, $tab1)]);
 
       $element = "marteau";
-      unset($tab1[array_search($element, $tab1)]);
+      unset($tab1[array_search($element,
 
       ?>
     </p>
+
     <ul>
       <li><?php echo $tab1[1]; ?></li>
       <li><?php echo $tab1[2]; ?></li>
       <li><?php echo $tab1[3]; ?></li>
       <li><?php echo $tab1[5]; ?></li>
       <li><?php echo $tab1[6]; ?></li>
+
     </ul>
     </p>
     <h3>Second exercice:</h3>
     <p>transformaer la chaîne de caractère "bleu, vert, noir, rouge, jaune" en un tableau</p>
+
 
     <p>ajouter en première position du tableau</p>
 
@@ -83,15 +86,28 @@
           ?></li>
       <li><?php echo $tab[5];
           ?></li>
-    </ul>
+ 
+    <p>ajouter en première position du tableau la valeur "violet"</p>
+    <p>résultat:
+
+      <?php
+      $tab = array("bleu", "vert", "noir", "rouge", "jaune");
+      array_unshift($tab, "violet");
+      var_dump($tab);
+      ?>
+
+   
+      <?php
+      $tab = array("bleu", "vert", "noir", "rouge", "jaune");
+      array_unshift($tab, "violet");
+
+      ?>
 
 
 
-    </p>
+   
 
   </div>
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 
