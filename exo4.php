@@ -41,7 +41,9 @@
     
     $message = "APPRENDRE PHP EST UNE CHOSE FORMIDABLE";
     $key = "BACKEND";
-    
+
+    /* encode le msg*/
+
     $messageArray = str_split($message);
     $keyArray = str_split($key);
     $keySize = count($keyArray);
@@ -54,13 +56,18 @@
             $encodedMessage[] = $vigenere[$letterToEncode][$letterKey];
         
         }else{
-          
+
+           $encodedMessage[] = " ";
+
+
         }
         $keycounter++;
 
     }
 
-   
+
+       $cryptedMessage = implode($encodedMessage);
+
     ?>
 
     <p>le message est: <?php echo $message; ?></p>
@@ -70,7 +77,9 @@
     <h5>3- decoder le message "TWA PEE WM TESLH WL LSLVNMRJ" avec la clé "VIGENERE"</h5>
     
     <?php
-    
+
+    /*decode msg*/
+
     $encodedMessage = "TWA PEE WM TESLH WL LSLVNMRJ";
     $key4decode = "VIGENERE";
     $encodedMessageArray = str_split($encodedMessage);
@@ -91,8 +100,12 @@
           
         } else {
             $decryptedMessage[] = " ";
+
+      }
+
            
-        }
+     
+
         $keycounter++;
     }
             $decodedMessage = implode($decryptedMessage);
